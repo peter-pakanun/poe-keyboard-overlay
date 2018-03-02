@@ -1,0 +1,24 @@
+{
+  "name": "poe-keyboard-overlay",
+  "version": "1.0.0",
+  "description": "Path of Exile keyboard overlay",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lpeachl/poe-keyboard-overlay.git"
+  },
+  "author": "Peter Pakanun <lpeachl@gmail.com>",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/lpeachl/poe-keyboard-overlay/issues"
+  },
+  "homepage": "https://github.com/lpeachl/poe-keyboard-overlay#readme",
+  "dependencies": {
+    "async": "^2.6.0",
+    "socket.io": "^2.0.4",
+    "split2": "^2.2.0"
+  }
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>PoE Keyboard Overlay</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.6/waves.min.css">
+    <style media="screen">
+      /* change waves color to green */
+      .waves-effect.waves-light .waves-ripple {
+        background: radial-gradient(
+          rgba(0, 255, 0, 0) 0,
+          rgba(0, 255, 0, 0.5) 70%
+        );
+      }
+
+      body {
+        background-color: black;
+      }
+
+      .flask {
+        position: absolute;
+        top: 980px;
+        left: 310px; /*offset by 46px every flasks*/
+        width: 40px;
+        height: 94px;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0);
+      }
+      #key2 { left: 356px; }
+      #key3 { left: 402px; }
+      #key4 { left: 448px; }
+      #key5 { left: 494px; }
+
+      .skill {
+        position: absolute;
+        top: 1021px;
+        left: 1414px;
+        width: 49px;
+        height: 49px;
+        background-color: rgba(255, 255, 255, 0);
+      }
+      #keyw { left: 1469px; }
+      #keye { left: 1525px; }
+      #keyr { left: 1581px; }
+      #keyt { left: 1637px; }
+
+      .skill-upper {
+        position: absolute;
+        top: 953px;
+        left: 1525px;
+        width: 49px;
+        height: 49px;
+        background-color: rgba(255, 255, 255, 0);
+      }
+      #keyMButton { left: 1580px; }
+      #keyRButton { left: 1635px; }
+
+      .shift {
+        position: absolute;
+        top: 975px;
+        left: 1406px;
+        width: 108px;
+        height: 37px;
+        line-height: 37px;
+
+        font-size: 30px;
+        text-align: center;
+        vertical-align: middle;
+        font-family: sans-serif;
+        color: rgb(123, 123, 123);
+        background-color: rgba(16, 12, 16, 1);
+
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 3px;
+        border-color: rgba(135, 96, 55, 1);
+      }
+
+      .detonate {
+        position: absolute;
+        top: 883px;
+        left: 1630px;
+        width: 51px;
+        height: 51px;
+        background-color: rgba(255, 255, 255, 0);
+      }
+
+      .ss {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flask waves-effect waves-light" id="key1"></div>
+    <div class="flask waves-effect waves-light" id="key2"></div>
+    <div class="flask waves-effect waves-light" id="key3"></div>
+    <div class="flask waves-effect waves-light" id="key4"></div>
+    <div class="flask waves-effect waves-light" id="key5"></div>
+
+    <div class="skill waves-effect waves-light" id="keyq"></div>
+    <div class="skill waves-effect waves-light" id="keyw"></div>
+    <div class="skill waves-effect waves-light" id="keye"></div>
+    <div class="skill waves-effect waves-light" id="keyr"></div>
+    <div class="skill waves-effect waves-light" id="keyt"></div>
+
+    <div class="skill-upper waves-effect waves-light" id="keyLButton"></div>
+    <div class="skill-upper waves-effect waves-light" id="keyMButton"></div>
+    <div class="skill-upper waves-effect waves-light" id="keyRButton"></div>
+
+    <div class="detonate waves-effect waves-light" id="keyd"></div>
+
+    <div class="shift waves-effect waves-light" id="keyShift">Shift</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.6/waves.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+      Waves.init({
+        duration: 200
+      });
+
+      var socket = io();
+      socket.on('keydown', function(e){
+        Waves.ripple('#key'+e.char, { wait: 1000*3600 });
+      });
+      socket.on('keyup', function(e){
+        Waves.calm('#key'+e.char);
+      });
+    </script>
+  </body>
+</html>
