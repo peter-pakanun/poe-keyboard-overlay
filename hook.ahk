@@ -63,6 +63,13 @@ Return
   FileAppend, d up`n,*
 Return
 
+; 3.2.0 Net
+~*z::
+  FileAppend, z down`n,*
+  keywait, z
+  FileAppend, z up`n,*
+Return
+
 
 ~*1::
   FileAppend, 1 down`n,*
