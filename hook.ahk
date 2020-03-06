@@ -71,31 +71,31 @@ Return
 Return
 
 
-~*1::
+~1::
   FileAppend, 1 down`n,*
   keywait, 1
   FileAppend, 1 up`n,*
 Return
 
-~*2::
+~2::
   FileAppend, 2 down`n,*
   keywait, 2
   FileAppend, 2 up`n,*
 Return
 
-~*3::
+~3::
   FileAppend, 3 down`n,*
   keywait, 3
   FileAppend, 3 up`n,*
 Return
 
-~*4::
+~4::
   FileAppend, 4 down`n,*
   keywait, 4
   FileAppend, 4 up`n,*
 Return
 
-~*5::
+~5::
   FileAppend, 5 down`n,*
   keywait, 5
   FileAppend, 5 up`n,*
