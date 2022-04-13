@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/lpeachl/poe-keyboard-overlay#readme",
   "dependencies": {
-    "async": "^2.6.0",
+    "async": "^3.2.2",
     "socket.io": "^2.0.4",
     "split2": "^2.2.0"
   }
